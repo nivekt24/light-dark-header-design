@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   background-color: #fafafa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   margin: 0;
   transition: background 0.2s linear;
 }
@@ -20,6 +18,35 @@ body.dark {
 
 body.dark p {
   color: #fff;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.sun-moon {
+  width: 30rem;
+  height: 30rem;
+  background: linear-gradient(225deg, #ff900b, #ff505b);
+  border-radius: 50%;
+  box-shadow: 0.1rem 0.275rem rgba(248, 106, 59, 0.2);
+}
+
+.switch .sun-moon {
+  background: linear-gradient(255deg, #93cdff, #3c3a74);
+  box-shadow: none;
+}
+
+.wrapper {
+  position: fixed;
+  right: 0;
+  transform: translateX(-50%);
+  bottom: 40px;
 }
 
 .checkbox {
