@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 
 :root {
-  /* HSL color mode */
-  --first-color: #7da9e6;
   --text-color: hsl(var(--hue-color), 8%, 45%);
+  --first-color: #7da9e6;
+  --dark-body-color: #fff;
 }
 
 *,
@@ -17,6 +17,10 @@
 
 body {
   font-family: 'Tilt Warp', cursive;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   background-color: #fafafa;
   color: var(--text-color);
@@ -25,15 +29,29 @@ body {
 
 body.dark {
   background: #292c35;
-}
-
-body.dark p,
-.dark .desktop-main-menu a {
-  color: #fff;
+  color: var(--dark-body-color);
 }
 
 ul {
   list-style: none;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 1rem;
+  width: 80%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .desktop-main-menu {
@@ -53,7 +71,7 @@ ul {
 }
 
 .desktop-main-menu ul li {
-  margin-right: 20px;
+  margin-right: 30px;
   padding-bottom: 2px;
 }
 
@@ -67,18 +85,9 @@ ul {
   color: var(--first-color);
 }
 
-.container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  position: relative;
-}
-
 .sun-moon {
-  width: 30rem;
-  height: 30rem;
+  width: 25rem;
+  height: 25rem;
   background: linear-gradient(225deg, #ff900b, #ff505b);
   border-radius: 50%;
   box-shadow: 0.1rem 0.275rem rgba(248, 106, 59, 0.2);
@@ -90,10 +99,46 @@ ul {
 }
 
 .wrapper {
-  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 100%;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+.copyright-text {
+  position: absolute;
+  left: 0;
+  transform: translateX(10%);
+  bottom: 30px;
+  font-size: 0.75rem;
+}
+
+.social-media {
+  position: absolute;
   right: 0;
   transform: translateX(-50%);
-  bottom: 40px;
+  bottom: 30px;
+  display: flex;
+}
+
+.social-media i {
+  font-size: 1.25rem;
+  margin: 0 0.75rem;
+}
+
+.text-logo {
+  margin-left: 10px;
+}
+
+.dark .social-media {
+  color: var(--dark-body-color);
 }
 
 .checkbox {
@@ -116,7 +161,7 @@ ul {
 }
 
 .label .switch {
-  background-color: #fff;
+  background-color: var(--dark-body-color);
   border-radius: 50%;
   position: absolute;
   top: 2px;
@@ -137,4 +182,30 @@ ul {
 
 .fa-sun {
   color: #f39c12;
+}
+
+@media (max-width: 700px) {
+  body {
+    overflow: hidden;
+  }
+
+  .wrapper {
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .desktop-main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .sun-moon {
+    width: 15rem;
+    height: 15rem;
+  }
 }
