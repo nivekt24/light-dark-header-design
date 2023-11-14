@@ -23,7 +23,22 @@ body {
   text-decoration: none;
   overflow: hidden;
 
-  background-color: #fafafa;
+  background-image: linear-gradient(
+    to right top,
+    #fff0b3,
+    #ffeea8,
+    #ffeb9c,
+    #ffe991,
+    #ffe685,
+    #ffe381,
+    #ffe17e,
+    #ffde7a,
+    #ffda7e,
+    #ffd782,
+    #ffd386,
+    #ffd08a
+  );
+  /* background-color: #fafafa; */
   color: var(--text-color);
   transition: background 0.2s linear;
 }
